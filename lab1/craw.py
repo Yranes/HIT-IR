@@ -31,7 +31,7 @@ def is_legal(url):
         return False
     result = parse.urlparse(url = url, scheme = 'http', allow_fragments=True)
     index_url = result.scheme + '://' + result[1]
-    if index_url not in has_rp_url_list:
+    if index_url not in has_rp_url_list: #若爬取速度过慢可删
         try:
             rp = robotparser.RobotFileParser(index_url + '/robots.txt')
             rp.read()
