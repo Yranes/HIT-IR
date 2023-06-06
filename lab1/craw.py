@@ -13,9 +13,9 @@ tar_num, tar_file_num = 1100, 100
 cnt_num, cnt_file_num = 0, 0
 
 Headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34',
+    'User-Agent': 'Your Agent',
     'Connection': 'close',
-    'Cookie': 'JSESSIONID=42CF3E63C9047AF94586ADF3DF46C99B; sudy_sk=089972B6D7455CDCEADF8ABC7A3F4FB3300A9AC7F6DE2F238B44989567856AE83D3BAD68C45C2EAABD776F80FD5CBC94108AE3EABD752CA3FEAFE9238D38266B4AFEC17766D9E51818DD34CFDA0C90AD; language='
+    'Cookie': 'Your Cookie'
 }
 
 rp_list, has_rp_url_list = [], []
