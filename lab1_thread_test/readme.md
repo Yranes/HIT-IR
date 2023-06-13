@@ -1,5 +1,5 @@
 ### 1. 网页的选择与抓取：
-选择“jwc.hit.edu.cn”教务处网站作为我们爬虫的起点网站，并限制爬虫程序只爬取此网站域名下的网页。首先我们设置Http请求报文的部分字段，将Cookie字段，User-Agent字段，Connection字段加入。接着从起始网址出发，初步筛选（将非jwc.hit域下的url筛去，将不允许爬取的url筛去）并爬取到1100个教务处网站下的网页url，并将其存入线程安全的Queue中，方便后续爬取网页内容和下载网页附件。接着我们需要根据网页内容判断该网页是否合法，即：该网页是否有标题<title>，是否有正文<div class = “wp_articlecontent”>，并检查是否有附件，附件是否能够正常下载。
+选择“jwc.hit.edu.cn”教务处网站作为我们爬虫的起点网站，并限制爬虫程序只爬取此网站域名下的网页。首先我们设置Http请求报文的部分字段，将Cookie字段，User-Agent字段，Connection字段加入。接着从起始网址出发，初步筛选（将非jwc.hit域下的url筛去，将不允许爬取的url筛去）并爬取到1100个教务处网站下的网页url，并将其存入线程安全的Queue中，方便后续爬取网页内容和下载网页附件。接着我们需要根据网页内容判断该网页是否合法，即：该网页是否有标题\<title\>，是否有正文\<div class = “wp_articlecontent”\>，并检查是否有附件，附件是否能够正常下载。
 
 ### 2. 附件的下载：
 首先我们需要识别附件，可以通过F12查看教务处网站附件的基本格式，均为jwc.hit.edu.cn/_upload/…/xxx.doc(xlxs, doc, txt, etc.)。所以我们只需要找到结尾是xlxs, doc, docx, txt等且包含‘_upload’的url即可。利用BeautifulSoup抓取网页上所有的<a>标签的href属性值（即url），接着用正则表达式筛选附件url即可。
